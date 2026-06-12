@@ -1,9 +1,10 @@
 # ESP32 学习教程合集
 
-这个仓库收录了两套 ESP32 学习资料：
+这个仓库收录了三套 ESP32 学习资料：
 
 1. **ESP32_Tutorial_Series**：用 Arduino IDE 快速上手的示例教程
 2. **ESP32_C_Tutorial**：系统学习 C 语言基础，结合 ESP32 硬件实践
+3. **ESP32_Projects**：综合项目，把前面学到的技能组合起来，从简单到复杂
 
 ## 目录
 
@@ -17,11 +18,18 @@ ESP32-Tutorials/
 │   ├── peripherals/            # 外设项目
 │   └── README.md
 │
-└── ESP32_C_Tutorial/          # C 语言基础教程
-    ├── C01_Hello_World/
-    ├── C02_Variables_Types/
+├── ESP32_C_Tutorial/          # C 语言基础教程
+│   ├── C01_Hello_World/
+│   ├── C02_Variables_Types/
+│   ├── ...
+│   ├── C16_Code_Variations_and_Traps/
+│   └── README.md
+│
+└── ESP32_Projects/            # 综合项目（由易到难）
+    ├── P01_Smart_Night_Light/
+    ├── P02_Button_Dimming_Lamp/
     ├── ...
-    ├── C16_Code_Variations_and_Traps/
+    ├── P15_Complete_Smart_Home_Node/
     └── README.md
 ```
 
@@ -52,6 +60,7 @@ ESP32-Tutorials/
 - 如果你完全没接触过 ESP32，建议从 `ESP32_Tutorial_Series/01_Digital_Output_Blink` 开始
 - 如果你想系统学习 C 语言，可以并行学习 `ESP32_C_Tutorial/C01_Hello_World`
 - 每课都包含大量中文注释、写法变体、常见陷阱和课后练习，建议边读边动手做
+- 学完基础教程后，进入 `ESP32_Projects/` 做综合项目，把零散技能串成完整作品
 
 ## 硬件准备
 
