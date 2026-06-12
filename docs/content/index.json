@@ -1,0 +1,376 @@
+{
+  "root": [
+    {
+      "path": "README.md",
+      "title": "ESP32 学习教程合集",
+      "subtitle": "仓库首页",
+      "category": "root"
+    }
+  ],
+  "arduino": [
+    {
+      "path": "ESP32_Tutorial_Series/01_Digital_Output_Blink/01_Digital_Output_Blink.ino",
+      "title": "ESP32 教程系列 01：数字输出 - 点亮 LED（Blink）",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/02_Digital_Input_Button/02_Digital_Input_Button.ino",
+      "title": "ESP32 教程系列 02：数字输入 - 按键控制 LED",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/03_PWM_LED_Fade/03_PWM_LED_Fade.ino",
+      "title": "ESP32 教程系列 03：PWM 输出 - LED 呼吸灯",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/04_ADC_Read_Analog/04_ADC_Read_Analog.ino",
+      "title": "ESP32 教程系列 04：ADC 模拟输入 - 读取电位器/光照强度",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/05_Serial_Communication/05_Serial_Communication.ino",
+      "title": "ESP32 教程系列 05：串口通信 - 与电脑对话",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/06_WiFi_Connect/06_WiFi_Connect.ino",
+      "title": "ESP32 教程系列 06：Wi-Fi 连接 - 让 ESP32 接入无线网络",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/07_Web_Server_LED/07_Web_Server_LED.ino",
+      "title": "ESP32 教程系列 07：Web 服务器 - 用手机/电脑浏览器控制 LED",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/08_Bluetooth_Serial/08_Bluetooth_Serial.ino",
+      "title": "ESP32 教程系列 08：蓝牙串口 - 用手机 APP 控制 LED",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/09_External_Interrupt/09_External_Interrupt.ino",
+      "title": "ESP32 教程系列 09：外部中断 - 用按键触发事件",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/10_Timer_Interrupt/10_Timer_Interrupt.ino",
+      "title": "ESP32 教程系列 10：定时器中断 - 精确定时执行任务",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/11_Touch_Sensor/11_Touch_Sensor.ino",
+      "title": "ESP32 教程系列 11：触摸传感器 —— 不用机械按键也能控制",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/12_FreeRTOS_Tasks/12_FreeRTOS_Tasks.ino",
+      "title": "ESP32 教程系列 12：FreeRTOS 多任务 —— 同时做好几件事",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/13_Preferences_Storage/13_Preferences_Storage.ino",
+      "title": "ESP32 教程系列 13：Preferences 存储 —— 断电也不丢失的数据",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/14_HTTP_Client/14_HTTP_Client.ino",
+      "title": "ESP32 教程系列 14：HTTP 客户端 —— 访问网络 API 获取数据",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/15_Deep_Sleep/15_Deep_Sleep.ino",
+      "title": "ESP32 教程系列 15：Deep Sleep 深度睡眠 —— 让设备省电运行",
+      "subtitle": "Arduino 教程",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/extensions/mDNS_Web_Server/mDNS_Web_Server.ino",
+      "title": "ESP32 扩展教程：mDNS_Web_Server - 用域名代替 IP 地址访问 ESP32",
+      "subtitle": "扩展项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/extensions/WebSocket_LED/WebSocket_LED.ino",
+      "title": "ESP32 扩展教程：WebSocket_LED - 实时双向控制 LED",
+      "subtitle": "扩展项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/extensions/WiFi_AP_Mode/WiFi_AP_Mode.ino",
+      "title": "ESP32 扩展教程：WiFi_AP_Mode - 把 ESP32 变成 Wi-Fi 热点",
+      "subtitle": "扩展项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/extensions/WiFi_Manager_Config/WiFi_Manager_Config.ino",
+      "title": "ESP32 扩展教程：WiFi_Manager_Config - 网页配网，无需重新烧录",
+      "subtitle": "扩展项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/Active_Buzzer/Active_Buzzer.ino",
+      "title": "Active_Buzzer",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/DHT11_DHT22_Sensor/DHT11_DHT22_Sensor.ino",
+      "title": "DHT11_DHT22_Sensor",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/HC_SR04_Ultrasonic_Distance/HC_SR04_Ultrasonic_Distance.ino",
+      "title": "HC_SR04_Ultrasonic_Distance",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/I2C_OLED_SSD1306_Display/I2C_OLED_SSD1306_Display.ino",
+      "title": "I2C_OLED_SSD1306_Display",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/LDR_Light_Sensor/LDR_Light_Sensor.ino",
+      "title": "LDR_Light_Sensor",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/PIR_Motion_Sensor/PIR_Motion_Sensor.ino",
+      "title": "PIR_Motion_Sensor",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/Relay_Module_Control/Relay_Module_Control.ino",
+      "title": "Relay_Module_Control",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/SG90_Servo_Motor/SG90_Servo_Motor.ino",
+      "title": "SG90_Servo_Motor",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/Soil_Moisture_Sensor/Soil_Moisture_Sensor.ino",
+      "title": "Soil_Moisture_Sensor",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    },
+    {
+      "path": "ESP32_Tutorial_Series/peripherals/WS2812B_NeoPixel_LED/WS2812B_NeoPixel_LED.ino",
+      "title": "WS2812B_NeoPixel_LED",
+      "subtitle": "外设项目",
+      "category": "arduino"
+    }
+  ],
+  "c": [
+    {
+      "path": "ESP32_C_Tutorial/C01_Hello_World/C01_Hello_World.ino",
+      "title": "C01_Hello_World",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C02_Variables_Types/C02_Variables_Types.ino",
+      "title": "C02_Variables_Types",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C03_Operators/C03_Operators.ino",
+      "title": "C03_Operators",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C04_Conditions/C04_Conditions.ino",
+      "title": "C04_Conditions",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C05_Loops/C05_Loops.ino",
+      "title": "C05_Loops",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C06_Arrays/C06_Arrays.ino",
+      "title": "C06_Arrays",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C07_Functions/C07_Functions.ino",
+      "title": "C07_Functions",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C08_Pointers/C08_Pointers.ino",
+      "title": "C08_Pointers",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C09_Strings/C09_Strings.ino",
+      "title": "C09_Strings",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C10_Structures/C10_Structures.ino",
+      "title": "C10_Structures",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C11_Bit_Operations/C11_Bit_Operations.ino",
+      "title": "C11_Bit_Operations",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C12_GPIO_Registers/C12_GPIO_Registers.ino",
+      "title": "C12_GPIO_Registers",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C13_Macros_Preprocessor/C13_Macros_Preprocessor.ino",
+      "title": "C13_Macros_Preprocessor",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C14_Storage_Classes/C14_Storage_Classes.ino",
+      "title": "C14_Storage_Classes",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C15_Pointers_Arrays_Advanced/C15_Pointers_Arrays_Advanced.ino",
+      "title": "C15_Pointers_Arrays_Advanced",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    },
+    {
+      "path": "ESP32_C_Tutorial/C16_Code_Variations_and_Traps/C16_Code_Variations_and_Traps.ino",
+      "title": "C16_Code_Variations_and_Traps",
+      "subtitle": "C 语言教程",
+      "category": "c"
+    }
+  ],
+  "projects": [
+    {
+      "path": "ESP32_Projects/P01_Smart_Night_Light/README.md",
+      "title": "P01 智能小夜灯",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P02_Button_Dimming_Lamp/README.md",
+      "title": "P02 按键调光灯",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P03_Serial_Command_Controller/README.md",
+      "title": "P03 串口命令控制器",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P04_Temperature_Humidity_Alarm/README.md",
+      "title": "P04 温湿度报警器（Temperature Humidity Alarm）",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P05_Ultrasonic_Distance_Meter/README.md",
+      "title": "P05 超声波测距仪（Ultrasonic Distance Meter）",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P06_WiFi_Status_Display/README.md",
+      "title": "P06 Wi-Fi 状态显示器（WiFi Status Display）",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P07_Bluetooth_Remote_Light/README.md",
+      "title": "P07_Bluetooth_Remote_Light",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P08_Web_Temperature_Monitor/README.md",
+      "title": "P08_Web_Temperature_Monitor",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P09_Smart_Watering_System/README.md",
+      "title": "P09_Smart_Watering_System",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P10_Touch_Web_Dual_Control_Light/README.md",
+      "title": "P10 触摸 + Web 双控灯",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P11_Smart_Home_Center/README.md",
+      "title": "P11 智能家居中心",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P12_MQTT_Weather_Station/README.md",
+      "title": "P12 MQTT 气象站",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P13_Data_Logger/README.md",
+      "title": "综合项目 P13：数据记录仪（Data Logger）",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P14_Low_Power_Environment_Node/README.md",
+      "title": "综合项目 P14：低功耗环境节点（Low Power Environment Node）",
+      "subtitle": "综合项目",
+      "category": "projects"
+    },
+    {
+      "path": "ESP32_Projects/P15_Complete_Smart_Home_Node/README.md",
+      "title": "综合项目 P15：完整智能家居节点（Complete Smart Home Node）",
+      "subtitle": "综合项目",
+      "category": "projects"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 学习教程</title>
+  <meta name="description" content="ESP32 Arduino 教程、C 语言教程和综合项目合集">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" media="(prefers-color-scheme: dark)">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- 顶部导航 -->
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="打开菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="#" class="logo" data-home>
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">ESP32 学习教程</span>
+      </a>
+      <div class="topbar-actions">
+        <button class="btn-icon" id="annoToggle" title="标注面板" aria-label="标注面板">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 7h10M7 12h10M7 17h6"/>
+            <path d="M20 20l-2-2"/>
+          </svg>
+        </button>
+        <button class="btn-icon" id="themeToggle" title="切换主题" aria-label="切换主题">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <nav class="nav-tree" id="navTree">
+          <!-- 由 JS 填充 -->
+        </nav>
+      </aside>
+
+      <!-- 内容区 -->
+      <main class="content-area" id="contentArea">
+        <div class="content-wrapper" id="contentWrapper">
+          <div class="hero">
+            <div class="hero-icon">⚡</div>
+            <h1>ESP32 学习教程</h1>
+            <p class="hero-desc">一套从零基础到综合项目的 ESP32 学习资料，包含 Arduino 入门、C 语言基础和 15 个递进式综合项目。</p>
+            <div class="hero-stats" id="heroStats">
+              <!-- 由 JS 填充 -->
+            </div>
+            <div class="hero-actions">
+              <a href="#" class="btn btn-primary" data-load="ESP32_Tutorial_Series/README.md">开始 Arduino 教程</a>
+              <a href="#" class="btn btn-secondary" data-load="ESP32_C_Tutorial/README.md">开始 C 语言教程</a>
+              <a href="#" class="btn btn-secondary" data-load="ESP32_Projects/README.md">看综合项目</a>
+            </div>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">📚</div>
+              <h3>Arduino 入门</h3>
+              <p>从点灯开始，逐步学习 GPIO、PWM、ADC、Wi-Fi、蓝牙、中断、定时器等核心概念。</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔤</div>
+              <h3>C 语言基础</h3>
+              <p>用 ESP32 学习 C 语言，理解变量、指针、结构体、位运算等底层原理。</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛠️</div>
+              <h3>综合项目</h3>
+              <p>15 个由易到难的项目，把零散知识点串成智能家居、气象站、数据记录器等完整作品。</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💡</div>
+              <h3>在线标注</h3>
+              <p>选中文字即可添加高亮和笔记，所有标注保存在本地浏览器，不会上传到服务器。</p>
+            </div>
+          </div>
+        </div>
+
+        <article class="markdown-body hidden" id="markdownBody">
+          <!-- 由 JS 填充 -->
+        </article>
+      </main>
+
+      <!-- 标注面板 -->
+      <aside class="annotation-panel hidden" id="annotationPanel">
+        <div class="annotation-header">
+          <h3>我的标注</h3>
+          <div class="annotation-actions">
+            <button class="btn-text" id="exportAnno">导出</button>
+            <button class="btn-text" id="importAnno">导入</button>
+            <button class="btn-text btn-danger" id="clearAnno">清空</button>
+          </div>
+        </div>
+        <div class="annotation-list" id="annotationList">
+          <p class="annotation-empty">暂无标注，选中页面文字即可添加。</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 标注弹窗 -->
+  <div class="anno-popup hidden" id="annoPopup">
+    <div class="anno-colors">
+      <button class="color-dot yellow" data-color="yellow"></button>
+      <button class="color-dot green" data-color="green"></button>
+      <button class="color-dot blue" data-color="blue"></button>
+      <button class="color-dot pink" data-color="pink"></button>
+    </div>
+    <textarea id="annoNote" placeholder="添加笔记（可选）..."></textarea>
+    <div class="anno-popup-actions">
+      <button class="btn btn-sm btn-primary" id="saveAnno">保存</button>
+      <button class="btn btn-sm btn-secondary" id="cancelAnno">取消</button>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
