@@ -1,5 +1,9 @@
 # ESP32 学习教程合集
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-在线阅读-blue)](https://everett406.github.io/ESP32-Tutorials/)
+
+📖 **在线阅读地址：https://everett406.github.io/ESP32-Tutorials/**
+
 这个仓库收录了三套 ESP32 学习资料：
 
 1. **ESP32_Tutorial_Series**：用 Arduino IDE 快速上手的示例教程

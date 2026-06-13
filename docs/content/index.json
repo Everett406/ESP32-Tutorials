@@ -9,6 +9,12 @@
   ],
   "arduino": [
     {
+      "path": "ESP32_Tutorial_Series/README.md",
+      "title": "ESP32 Arduino 教程系列",
+      "subtitle": "Arduino 教程说明",
+      "category": "arduino"
+    },
+    {
       "path": "ESP32_Tutorial_Series/01_Digital_Output_Blink/01_Digital_Output_Blink.ino",
       "title": "ESP32 教程系列 01：数字输出 - 点亮 LED（Blink）",
       "subtitle": "Arduino 教程",
@@ -185,6 +191,12 @@
   ],
   "c": [
     {
+      "path": "ESP32_C_Tutorial/README.md",
+      "title": "ESP32 学 C 语言教程",
+      "subtitle": "C 语言教程说明",
+      "category": "c"
+    },
+    {
       "path": "ESP32_C_Tutorial/C01_Hello_World/C01_Hello_World.ino",
       "title": "C01_Hello_World",
       "subtitle": "C 语言教程",
@@ -282,6 +294,12 @@
     }
   ],
   "projects": [
+    {
+      "path": "ESP32_Projects/README.md",
+      "title": "ESP32 综合项目合集",
+      "subtitle": "综合项目说明",
+      "category": "projects"
+    },
     {
       "path": "ESP32_Projects/P01_Smart_Night_Light/README.md",
       "title": "P01 智能小夜灯",

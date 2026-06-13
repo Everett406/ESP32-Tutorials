@@ -176,6 +176,29 @@ def scan_special_dirs():
     return items
 
 
+def scan_series_top_readme(series_dir: Path, category: str, subtitle: str) -> list:
+    """扫描教程系列顶层 README.md"""
+    items = []
+    readme = series_dir / "README.md"
+
+    if readme.exists():
+        rel_path = readme.relative_to(ROOT)
+        dst = CONTENT / rel_path
+        copy_file(readme, dst)
+
+        content = readme.read_text(encoding="utf-8")
+        title = extract_title_from_md(content, series_dir.name)
+
+        items.append({
+            "path": str(rel_path).replace("\\", "/"),
+            "title": title,
+            "subtitle": subtitle,
+            "category": category
+        })
+
+    return items
+
+
 def main():
     print("开始构建站点内容...")
     clean_content()
@@ -189,19 +212,29 @@ def main():
 
     # 扫描 Arduino 教程
     print("扫描 Arduino 教程...")
-    index["arduino"].extend(scan_series(ROOT / "ESP32_Tutorial_Series", "arduino"))
+    arduino_dir = ROOT / "ESP32_Tutorial_Series"
+    index["arduino"].extend(scan_series_top_readme(arduino_dir, "arduino", "Arduino 教程说明"))
+    index["arduino"].extend(scan_series(arduino_dir, "arduino"))
 
     # 扫描扩展和外设项目
     print("扫描扩展和外设项目...")
+    extensions_dir = arduino_dir / "extensions"
+    peripherals_dir = arduino_dir / "peripherals"
+    index["arduino"].extend(scan_series_top_readme(extensions_dir, "arduino", "扩展项目说明"))
+    index["arduino"].extend(scan_series_top_readme(peripherals_dir, "arduino", "外设项目说明"))
     index["arduino"].extend(scan_special_dirs())
 
     # 扫描 C 语言教程
     print("扫描 C 语言教程...")
-    index["c"].extend(scan_series(ROOT / "ESP32_C_Tutorial", "c"))
+    c_dir = ROOT / "ESP32_C_Tutorial"
+    index["c"].extend(scan_series_top_readme(c_dir, "c", "C 语言教程说明"))
+    index["c"].extend(scan_series(c_dir, "c"))
 
     # 扫描综合项目
     print("扫描综合项目...")
-    index["projects"].extend(scan_series(ROOT / "ESP32_Projects", "projects"))
+    proj_dir = ROOT / "ESP32_Projects"
+    index["projects"].extend(scan_series_top_readme(proj_dir, "projects", "综合项目说明"))
+    index["projects"].extend(scan_series(proj_dir, "projects"))
 
     # 写入索引
     index_file = CONTENT / "index.json"
