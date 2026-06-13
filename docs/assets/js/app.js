@@ -88,35 +88,72 @@
       const sectionEl = document.createElement('div');
       sectionEl.className = 'nav-section';
 
-      const title = document.createElement('div');
-      title.className = 'nav-section-title';
-      title.textContent = `${section.icon} ${section.title}`;
-      sectionEl.appendChild(title);
+      const secTitle = document.createElement('div');
+      secTitle.className = 'nav-section-title';
+      secTitle.textContent = `${section.icon} ${section.title}`;
+      sectionEl.appendChild(secTitle);
 
+      // 按 subtitle 分组
+      const groups = {};
+      const groupOrder = [];
       items.forEach(item => {
-        const link = document.createElement('a');
-        link.className = 'nav-item';
-        link.href = `#${item.path}`;
-        link.dataset.path = item.path;
-        link.textContent = item.title;
-
-        if (item.subtitle) {
-          const sub = document.createElement('span');
-          sub.className = 'nav-path';
-          sub.textContent = item.subtitle;
-          link.appendChild(document.createElement('br'));
-          link.appendChild(sub);
+        const subtitle = item.subtitle || '其他';
+        if (!groups[subtitle]) {
+          groups[subtitle] = [];
+          groupOrder.push(subtitle);
         }
+        groups[subtitle].push(item);
+      });
 
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          loadContent(item.path);
-          if (window.innerWidth <= 768) {
-            closeSidebar();
-          }
+      // 渲染分组
+      groupOrder.forEach((subtitle, idx) => {
+        const groupItems = groups[subtitle];
+
+        const groupHeader = document.createElement('div');
+        groupHeader.className = 'nav-group-header';
+        groupHeader.innerHTML = `
+          <svg class="nav-group-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="nav-group-label">${subtitle}</span>
+          <span class="nav-group-count">${groupItems.length}</span>
+        `;
+
+        const groupBody = document.createElement('div');
+        groupBody.className = 'nav-group-body';
+
+        groupItems.forEach(item => {
+          const link = document.createElement('a');
+          link.className = 'nav-item';
+          link.href = `#${item.path}`;
+          link.dataset.path = item.path;
+          link.title = item.title;
+
+          const displayTitle = item.title.length > 22
+            ? item.title.slice(0, 20) + '…'
+            : item.title;
+          link.textContent = displayTitle;
+
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadContent(item.path);
+            if (window.innerWidth <= 768) {
+              closeSidebar();
+            }
+          });
+
+          groupBody.appendChild(link);
         });
 
-        sectionEl.appendChild(link);
+        groupHeader.addEventListener('click', () => {
+          groupHeader.classList.toggle('collapsed');
+        });
+
+        // 第一个分组默认展开
+        if (idx !== 0) {
+          groupHeader.classList.add('collapsed');
+        }
+
+        sectionEl.appendChild(groupHeader);
+        sectionEl.appendChild(groupBody);
       });
 
       navTree.appendChild(sectionEl);
@@ -127,6 +164,11 @@
     document.querySelectorAll('.nav-item').forEach(item => {
       item.classList.toggle('active', item.dataset.path === path);
     });
+    if (path) {
+      document.querySelectorAll('.nav-group-header').forEach(header => {
+        header.classList.remove('collapsed');
+      });
+    }
   }
 
   // ==================== 内容加载 ====================
@@ -149,7 +191,6 @@
       let html;
 
       if (isIno) {
-        // .ino 文件用代码块包裹
         html = `<h1>${getTitleFromPath(path)}</h1>\n<pre><code class="language-cpp">${escapeHtml(text)}</code></pre>`;
       } else {
         html = marked.parse(text);
@@ -159,21 +200,14 @@
       contentWrapper.classList.add('hidden');
       markdownBody.classList.remove('hidden');
 
-      // 处理代码块
       wrapCodeBlocks();
 
-      // 高亮代码
       markdownBody.querySelectorAll('pre code').forEach(block => {
         hljs.highlightElement(block);
       });
 
-      // 恢复标注高亮
       restoreAnnotations();
-
-      // 滚动到顶部
       window.scrollTo(0, 0);
-
-      // 更新 URL hash
       history.pushState(null, '', `#${path}`);
     } catch (error) {
       console.error('加载内容失败:', error);
@@ -257,9 +291,7 @@
 
   // ==================== 标注系统 ====================
 
-  function loadAnnotations() {
-    // 已经由 getAnnotations 处理
-  }
+  function loadAnnotations() {}
 
   function getAnnotations() {
     try {
@@ -307,7 +339,6 @@
 
     const range = selection.getRangeAt(0);
 
-    // 确保选区在 markdown-body 内
     if (!markdownBody.contains(range.commonAncestorContainer)) {
       return;
     }
@@ -350,14 +381,12 @@
     const { text, range } = pendingSelection;
     const note = annoNote.value.trim();
 
-    // 计算在 markdown-body 文本中的偏移
     const bodyRange = document.createRange();
     bodyRange.selectNodeContents(markdownBody);
     bodyRange.setEnd(range.startContainer, range.startOffset);
     const startOffset = bodyRange.toString().length;
     const endOffset = startOffset + text.length;
 
-    // 用 span 包裹选区
     try {
       const span = document.createElement('span');
       span.className = `anno-highlight ${selectedColor}`;
@@ -375,7 +404,6 @@
   }
 
   function restoreAnnotations() {
-    // 清除旧的高亮
     markdownBody.querySelectorAll('.anno-highlight').forEach(span => {
       const parent = span.parentNode;
       while (span.firstChild) {
@@ -390,7 +418,6 @@
     const annotations = getAnnotations().filter(a => a.path === currentPath);
     if (annotations.length === 0) return;
 
-    // 简单的文本匹配恢复高亮
     const walker = document.createTreeWalker(
       markdownBody,
       NodeFilter.SHOW_TEXT,
@@ -405,7 +432,6 @@
     }
 
     annotations.forEach(anno => {
-      // 找到包含这段文字的位置
       for (const textNode of textNodes) {
         const index = textNode.textContent.indexOf(anno.text);
         if (index !== -1) {
@@ -419,9 +445,7 @@
             span.title = anno.note || '已标注';
             span.dataset.annoId = anno.id;
             range.surroundContents(span);
-          } catch (e) {
-            // 忽略跨元素匹配失败的情况
-          }
+          } catch (e) {}
           break;
         }
       }
@@ -438,7 +462,6 @@
 
     annotationList.innerHTML = '';
 
-    // 按路径分组
     const groups = {};
     annotations.forEach(anno => {
       if (!groups[anno.path]) groups[anno.path] = [];
@@ -595,11 +618,9 @@
   // ==================== 事件监听 ====================
 
   function setupEventListeners() {
-    // 路由
     window.addEventListener('hashchange', handleRoute);
     window.addEventListener('popstate', handleRoute);
 
-    // 首页按钮
     document.querySelectorAll('[data-home]').forEach(el => {
       el.addEventListener('click', (e) => {
         e.preventDefault();
@@ -614,40 +635,24 @@
       });
     });
 
-    // 主题
     themeToggle.addEventListener('click', toggleTheme);
-
-    // 侧边栏
     menuToggle.addEventListener('click', toggleSidebar);
-
-    // 标注面板
     annoToggle.addEventListener('click', toggleAnnotationPanel);
 
-    // 文本选择
     document.addEventListener('mouseup', (e) => {
       if (annoPopup.contains(e.target)) return;
       setTimeout(handleTextSelection, 10);
     });
 
-    // 标注弹窗
     annoPopup.querySelectorAll('.color-dot').forEach(dot => {
       dot.addEventListener('click', () => setSelectedColor(dot.dataset.color));
     });
 
     saveAnnoBtn.addEventListener('click', savePendingAnnotation);
     cancelAnnoBtn.addEventListener('click', hideAnnoPopup);
-
-    // 标注面板按钮
     exportAnnoBtn.addEventListener('click', exportAnnotations);
     importAnnoBtn.addEventListener('click', importAnnotations);
     clearAnnoBtn.addEventListener('click', clearAllAnnotations);
-
-    // 点击外部关闭弹窗
-    document.addEventListener('click', (e) => {
-      if (!annoPopup.contains(e.target)) {
-        // 不在这里隐藏，因为选择文字时会触发
-      }
-    });
   }
 
   // ==================== 首页统计 ====================
@@ -675,6 +680,5 @@
     `;
   }
 
-  // 启动
   init();
 })();
