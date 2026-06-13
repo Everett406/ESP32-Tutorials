@@ -145,6 +145,7 @@
 
         groupHeader.addEventListener('click', () => {
           groupHeader.classList.toggle('collapsed');
+          groupBody.classList.toggle('collapsed');
         });
 
         // 第一个分组默认展开
@@ -167,6 +168,9 @@
     if (path) {
       document.querySelectorAll('.nav-group-header').forEach(header => {
         header.classList.remove('collapsed');
+      });
+      document.querySelectorAll('.nav-group-body').forEach(body => {
+        body.classList.remove('collapsed');
       });
     }
   }
