@@ -1,3 +1,9 @@
+---
+
+> [!NOTE]
+> **本仓库已迁移至 Gitee**：<https://gitee.com/Everett5678/ESP32-Tutorials>
+> GitHub 端仅作只读归档，新代码请推送到 Gitee。
+
 # ESP32 学习教程合集
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-在线阅读-blue)](https://everett406.github.io/ESP32-Tutorials/)
